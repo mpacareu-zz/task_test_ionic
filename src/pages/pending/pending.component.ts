@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { TaskService } from '../../services/task.service';
 
 @Component({
     selector: 'page-pending',
@@ -6,4 +7,7 @@ import { Component} from '@angular/core';
 })
 export class PendingPage {
 
+    constructor( public taskService: TaskService){
+
+    }
 }

@@ -4,11 +4,16 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { PendingPage } from '../pages/pending/pending.component';
-import { FinishedPage } from '../pages/finished/finished.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+//Componentes
+import { PendingPage } from '../pages/pending/pending.component';
+import { FinishedPage } from '../pages/finished/finished.component';
+
+//Servicios
+import { TaskService } from '../services/task.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    TaskService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
