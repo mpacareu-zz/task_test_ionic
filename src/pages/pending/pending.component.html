@@ -1,9 +1,29 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color= "primary">
         <ion-title>Pendientes</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h2>Hola Pendientes</h2>
+<ion-content>
+<img src="../../assets/imgs/pendientes.jpg" >
+
+
+    <ion-list>
+        <button ion-item *ngFor="let list of taskService.list" (click)="itemSelected(list)">
+            {{ list.title }}
+        </button>
+    </ion-list>
+
+    <ion-fab bottom right>
+    <button (click)="addList()" ion-fab>
+    <ion-icon name="add"></ion-icon>
+    </button>
+    <!-- <ion-fab-list>
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list> -->
+  </ion-fab>
+
 </ion-content>

@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //Componentes
 import { PendingPage } from '../pages/pending/pending.component';
 import { FinishedPage } from '../pages/finished/finished.component';
+import { AddPage } from '../pages/add/add.component';
 
 //Servicios
 import { TaskService } from '../services/task.service';
@@ -20,7 +21,8 @@ import { TaskService } from '../services/task.service';
     MyApp,
     TabsPage,
     PendingPage,
-    FinishedPage
+    FinishedPage,
+    AddPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { TaskService } from '../services/task.service';
     MyApp,
     TabsPage,
     PendingPage,
-    FinishedPage
+    FinishedPage,
+    AddPage
   ],
   providers: [
     StatusBar,
