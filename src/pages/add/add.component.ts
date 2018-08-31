@@ -28,4 +28,16 @@ export class AddPage {
   updateTask(item: ListIItem) {
     item.completed = !item.completed;
   }
+
+  removeTask(index: number) {
+    this.list.items.splice(index, 1);
+
+    // this.list.items =
+    //   index > -1
+    //     ? [
+    //         ...this.list.items.slice(0, index),
+    //         ...this.list.items.slice(index + 1)
+    //       ]
+    //     : this.list.items;
+  }
 }
