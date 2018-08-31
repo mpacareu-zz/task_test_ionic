@@ -15,6 +15,8 @@ export class AddPage {
   constructor(public taskService: TaskService, navParams: NavParams) {
     console.log(navParams);
     this.list = new List(navParams.get('title'));
+
+    this.taskService.addList(this.list);
   }
 
   addItem() {
