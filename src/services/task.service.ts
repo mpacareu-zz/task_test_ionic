@@ -8,27 +8,29 @@ export class TaskService {
   constructor() {
     this.loadStorage();
   }
-  
-  addList(list:List){
+
+  addList(list: List) {
     this.list.push(list);
     this.saveStorage();
     console.log(this.list);
-    
   }
 
-  saveStorage(){
+  removeList(list: List) {
+    this.list = this.list.filter(item => {
+      return item.id !== list.id;
+    });
+    this.saveStorage();
+  }
 
+  saveStorage() {
     localStorage.setItem('data', JSON.stringify(this.list));
   }
 
-  loadStorage(){
-    if(localStorage.getItem('data')){
+  loadStorage() {
+    if (localStorage.getItem('data')) {
       this.list = JSON.parse(localStorage.getItem('data'));
-    }
-    else{
+    } else {
       this.list = [];
     }
-
   }
-
 }

@@ -16,7 +16,11 @@ export class PendingPage {
   ) {}
 
   itemSelected(item: List) {
-    console.log(`este es el item de la lista ${item.title}`);
+    console.log(`este es el item de la lista ${item}`);
+    this.navCtrl.push(AddPage, {
+      title: item.title,
+      items: item
+    });
   }
 
   addList() {
@@ -36,9 +40,6 @@ export class PendingPage {
         {
           text: 'Agregar',
           handler: data => {
-            if (data.title.length === 0) {
-              return;
-            }
             this.navCtrl.push(AddPage, {
               title: data.title
             });
@@ -47,5 +48,9 @@ export class PendingPage {
       ]
     });
     alert.present();
+  }
+
+  removeList(list: List) {
+    this.taskService.removeList(list);
   }
 }
