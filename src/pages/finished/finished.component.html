@@ -7,23 +7,7 @@
 <ion-content>
     <img src="../../assets/imgs/completados.jpg">
 
-    <ion-list>
-        <ion-item-sliding *ngFor="let list of taskService.list">
-            <button ion-item *ngIf="list.finished" (click)="itemSelected(list)">
-                {{ list.title }}
-                <ion-note item-end>
-                    {{list.items.length}} items
-                </ion-note>
-            </button>
+    <app-lists [finished]="true">
 
-
-            <ion-item-options side="left">
-                <button ion-button icon-only *ngIf="!list.finished" (click)="removeList(list)" color="danger">
-                    <ion-icon name="close"></ion-icon>
-                </button>
-            </ion-item-options>
-
-        </ion-item-sliding>
-
-    </ion-list>
+    </app-lists>
 </ion-content>

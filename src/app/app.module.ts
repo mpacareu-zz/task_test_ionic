@@ -12,9 +12,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PendingPage } from '../pages/pending/pending.component';
 import { FinishedPage } from '../pages/finished/finished.component';
 import { AddPage } from '../pages/add/add.component';
+import { ListsComponent } from '../components/lists.components';
 
 //Servicios
 import { TaskService } from '../services/task.service';
+
+//Pipes
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
 
 @NgModule({
   declarations: [
@@ -22,25 +26,18 @@ import { TaskService } from '../services/task.service';
     TabsPage,
     PendingPage,
     FinishedPage,
-    AddPage
+    AddPage,
+    FiltroCompletadoPipe,
+    ListsComponent
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
+  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    TabsPage,
-    PendingPage,
-    FinishedPage,
-    AddPage
-  ],
+  entryComponents: [MyApp, TabsPage, PendingPage, FinishedPage, AddPage],
   providers: [
     StatusBar,
     SplashScreen,
     TaskService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}
